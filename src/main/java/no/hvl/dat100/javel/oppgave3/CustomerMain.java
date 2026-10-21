@@ -1,6 +1,5 @@
 package no.hvl.dat100.javel.oppgave3;
 
-import com.sun.security.jgss.GSSUtil;
 import no.hvl.dat100.javel.oppgave4.Customers;
 
 public class CustomerMain {
