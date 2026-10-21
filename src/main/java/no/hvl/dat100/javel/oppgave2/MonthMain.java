@@ -25,28 +25,26 @@ public class MonthMain {
          Remember to also to check that you get the expected results
          */
 
-        System.out.println("Oppgave 2A");
+        System.out.println("Oppgave A");
         print_PowerUsage(power_usage_month);
 
-        System.out.println("\nOppgave 2B");
+        System.out.println("\nOppgave B");
         print_PowerPrices(power_prices_month);
 
-        System.out.println("\nOppgave 2C");
-        System.out.printf("%.2f\n", computePowerUsage(power_prices_month));
+        System.out.println("\nOppgave C");
+        System.out.printf("Total månedlig forbruk: %.2f kWh\n", computePowerUsage(power_usage_month));
 
-        System.out.println("\nOppgave 2D");
+        System.out.println("\nOppgave D");
         System.out.println(exceedThreshold(power_usage_month, 100));
         System.out.println(exceedThreshold(power_usage_month, 1000));
 
-        System.out.println("\nOppgave 2E");
-        System.out.printf("%.2f\n", computeSpotPrice(power_usage_month, power_prices_month));
+        System.out.println("\nOppgave E");
+        System.out.printf("Total spotpris: %.2f NOK\n", computeSpotPrice(power_usage_month, power_prices_month));
 
-        System.out.println("\nOppgave 2F");
-        //90% av prisen over 77 øre uten mva. (96,25 øre med mva.) blir dekket av strømstøtten.
-        System.out.printf("%.2f\n", computePowerSupport(power_usage_month, power_prices_month));
+        System.out.println("\nOppgave F");
+        System.out.printf("Total strømstøtte: %.2f NOK\n", computePowerSupport(power_usage_month, power_prices_month));
 
-        System.out.println("\nOppgave 2G");
-        //45 øre/kWh
-        System.out.printf("%.2f\n", computeNorgesPrice(power_usage_month));
+        System.out.println("\nOppgave G");
+        System.out.printf("Total norgespris: %.2f NOK\n", computeNorgesPrice(power_usage_month));
     }
 }

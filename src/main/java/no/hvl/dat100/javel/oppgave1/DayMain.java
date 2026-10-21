@@ -16,19 +16,19 @@ public class DayMain {
         System.out.println("==============");
         System.out.println();
 
-        // a
-        // DailyPower.printPowerPrices(powerprices_day);
+        System.out.println("Oppgave A");
+        DailyPower.printPowerPrices(powerprices_day);
 
-        // b
-        // DailyPower.printPowerUsage(powerusage_day);
+        System.out.println("\n\nOppgave B");
+        DailyPower.printPowerUsage(powerusage_day);
 
-        // c
-        // double total = DailyPower.computePowerUsage(powerusage_day);
-        // System.out.println("Total strømforbruk: " + total);
+        System.out.println("\n\nOppgave C");
+        double totalStrom = DailyPower.computePowerUsage(powerusage_day);
+        System.out.println("Total strømforbruk: " + totalStrom + " kWh");
 
-        // d
-        // double total = DailyPower.computeSpotPrice(powerusage_day, powerprices_day);
-        // System.out.println("Spotpris: " + total);
+        System.out.println("\nOppgave D");
+        double totalPris = DailyPower.computeSpotPrice(powerusage_day, powerprices_day);
+        System.out.printf("Total spotpris: %.2f NOK", totalPris);
 
         // e
         // double testStotteLavPris = DailyPower.getSupport(2.0, 0.5);
@@ -37,21 +37,21 @@ public class DayMain {
         // System.out.println("Straumstøtte ved lav pris: " + testStotteLavPris);
         // System.out.println("Straumstøtte ved høy pris: " + testStotteHoyPris);
 
-        // f
-        // double totalSupport = DailyPower.computePowerSupport(powerusage_day, powerprices_day);
-        // System.out.println("Total straumstøtte: " + totalSupport);
+        System.out.println("\n\nOppgave F");
+        double totalSupport = DailyPower.computePowerSupport(powerusage_day, powerprices_day);
+        System.out.printf("Total straumstøtte: %.2f NOK", totalSupport);
 
-        // g
-        // double norgesPrice = DailyPower.computeNorgesPrice(powerusage_day);
-        // System.out.println("Totalpris med Norgespris: " + norgesPrice + " kr");
+        System.out.println("\n\nOppgave G");
+        double norgesPrice = DailyPower.computeNorgesPrice(powerusage_day);
+        System.out.println("Totalpris med Norgespris: " + norgesPrice + " NOK");
 
-        // h
-        // double peak = DailyPower.findPeakUsage(powerusage_day);
-        // System.out.println("Høyeste forbruk (Peak): " + peak + " kWh");
+        System.out.println("\nOppgave H");
+        double peak = DailyPower.findPeakUsage(powerusage_day);
+        System.out.println("Høyeste forbruk (Peak): " + peak + " kWh");
 
-        // i
-        // double gjennomsnitt = DailyPower.findAvgPower(powerusage_day);
-        // System.out.println("Gjennomsnittlig forbruk: " + gjennomsnitt + " kWh");
+        System.out.println("\nOppgave F");
+        double gjennomsnitt = DailyPower.findAvgPower(powerusage_day);
+        System.out.printf("Gjennomsnittlig forbruk: %.5f kWh", gjennomsnitt);
 
     }
 }

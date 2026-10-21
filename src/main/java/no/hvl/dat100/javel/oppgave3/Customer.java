@@ -28,6 +28,9 @@ public class Customer {
     public int getCustomer_id() {
         return this.customer_id;
     }
+    public PowerAgreementType getAgreement() {
+        return this.agreement;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -38,10 +41,12 @@ public class Customer {
     public void setCustomer_id(int customer_id) {
         this.customer_id = customer_id;
     }
+    public void setAgreement(PowerAgreementType agreement) {
+        this.agreement = agreement;
+    }
 
     // TODO - toString method
     public String toString() {
         return "Customer number: " + customer_id + "\nName: " + name + "\nEmail: " + email + "\nAgreement: " + agreement;
     }
-
 }
