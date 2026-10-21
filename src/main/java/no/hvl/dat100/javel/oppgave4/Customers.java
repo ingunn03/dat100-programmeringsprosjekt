@@ -10,17 +10,21 @@ public class Customers {
     public Customers(int size) {
 
         // TODO
+        this.customers = new Customer[size];
 
     }
 
     // b) count number of non-null references
     public int countNonNull() {
 
-
         int count = 0;
 
         // TODO
-
+        for ( int i = 0; i < customers.length; i++) {
+            if (customers[i] != null) {
+                count += 1;
+            }
+        }
         return count;
     }
 
@@ -31,7 +35,13 @@ public class Customers {
         Customer c = null;
 
         // TODO
-
+        while (!funnet) {
+            for ( int i = 0; i < customers.length; i++) {
+                if (customers[i].getCustomer_id() == customer_id) {
+                    funnet = true;
+                }
+            }
+        }
         return c;
     }
 
@@ -41,7 +51,15 @@ public class Customers {
         boolean inserted = false;
 
         // TODO
-
+        while (!inserted) {
+            for ( int i = 0; i < customers.length; i++) {
+                if (customers[i] == null) {
+                    customers[i] = c;
+                    inserted = true;
+                    return inserted;
+                }
+            }
+        }
         return inserted;
     }
 
@@ -52,17 +70,32 @@ public class Customers {
         Customer c = null;
 
         // TODO
-
+        while (!deleted) {
+            for ( int i = 0; i < customers.length; i++) {
+                if (customers[i].getCustomer_id() == customer_id) {
+                    Customer removedCustomer = customers[i];
+                    customers[i] = null;
+                    deleted = true;
+                    return removedCustomer;
+                }
+            }
+        }
         return c;
     }
 
     // f) return reference table with all customers
     public Customer[] getCustomers() {
 
-        Customer[] customers = null;
+        Customer[] newCustomers = new Customer[this.countNonNull()];
 
         // TODO
-
-        return customers;
+        int j = 0;
+        for ( int i = 0; i < customers.length; i++) {
+            if (customers[i] != null) {
+                newCustomers[j] = customers[i];
+                j++;
+            }
+        }
+        return newCustomers;
     }
 }
