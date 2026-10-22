@@ -50,9 +50,8 @@ public class Invoice {
         System.out.println(c.toString());
         System.out.println();
         System.out.println(month);
-        System.out.println();
-        System.out.println();
-
+        System.out.printf("Forbruk: %.2f kWh\n", MonthlyPower.computePowerUsage(usage));
+        System.out.printf("Pris: %.2f NOK", amount);
 
     }
 }

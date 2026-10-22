@@ -46,6 +46,9 @@ public class CustomersMain {
         Customer customer3 = new Customer("Padme2", "padme@gay.mail", 18, PowerAgreementType.SPOTPRICE);
         customers.addCustomer(customer2);
         customers.addCustomer(customer3);
-        System.out.println(Arrays.toString(customers.getCustomers()));
+        for (int i = 0; i < customers.getCustomers().length; i++) {
+            System.out.println(customers.getCustomers()[i]);
+            System.out.println();
+        }
     }
 }
