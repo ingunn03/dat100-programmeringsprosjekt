@@ -20,12 +20,14 @@ public class CustomerMain {
         System.out.println(customer1.getCustomer_id());
         System.out.println(customer1.getName());
         System.out.println(customer1.getEmail());
+        System.out.println(customer1.getAgreement());
 
         System.out.println();
 
         customer1.setCustomer_id(997);
         customer1.setName("xxHorseLordsxx");
         customer1.setEmail("myemailisepic@epicsauce.gay");
+        customer1.setAgreement(PowerAgreementType.SPOTPRICE);
 
 
         System.out.println(customer1.toString());

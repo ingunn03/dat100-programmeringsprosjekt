@@ -1,6 +1,6 @@
 package no.hvl.dat100.javel.oppgave2;
 
-import no.hvl.dat100.javel.oppgave1.DailyPower;
+import no.hvl.dat100.javel.oppgave1.*;
 
 public class MonthlyPower {
 
@@ -9,13 +9,10 @@ public class MonthlyPower {
 
         // TODO
         for (int i = 0; i < usage.length; i++) {
-            System.out.print("Strøm forbruk Dag " + (i + 1) + ":");
-            for (int j = 0; j < usage[i].length; j++) {
-                System.out.print(" " + usage[i][j] + "kWh");
-            }
+            System.out.print("Strøm forbruk Dag " + (i + 1) + ": ");
+            DailyPower.printPowerUsage(usage[i]);
             System.out.println();
         }
-        return;
     }
 
     // b) print power prices for a month
@@ -23,13 +20,10 @@ public class MonthlyPower {
 
         // TODO
         for (int i = 0; i < prices.length; i++) {
-            System.out.print("Strømpris Dag " + (i + 1) + ":");
-            for (int j = 0; j < prices[i].length; j++) {
-                System.out.print(" " + prices[i][j] + ",-");
-            }
+            System.out.print("Strømpris Dag " + (i + 1) + ": ");
+            DailyPower.printPowerPrices(prices[i]);
             System.out.println();
         }
-        return;
     }
 
     // c) compute total power usage for a month
@@ -40,9 +34,7 @@ public class MonthlyPower {
         // TODO
 
         for (int i = 0; i < usage.length; i++) {
-            for (int j = 0; j < usage[i].length; j++) {
-                sum += usage[i][j];
-            }
+            sum += DailyPower.computePowerUsage(usage[i]);
         }
         return sum;
     }
@@ -79,23 +71,9 @@ public class MonthlyPower {
         double price = 0;
 
         // TODO
-
-        double sumkr = 0;
         for (int i = 0; i < prices.length; i++) {
-            for (int j = 0; j < prices[i].length; j++) {
-                sumkr += prices[i][j];
-            }
+            price += DailyPower.computeSpotPrice(usage[i], prices[i]);
         }
-
-        double sumkw = 0;
-        for (int i = 0; i < usage.length; i++) {
-            for (int j = 0; j < usage[i].length; j++) {
-                sumkw += usage[i][j];
-            }
-        }
-
-        price = sumkr / sumkw;
-
         return price;
     }
 
@@ -106,11 +84,7 @@ public class MonthlyPower {
 
         // TODO
         for (int i = 0; i < prices.length; i++) {
-            for (int j = 0; j < prices[i].length; j++) {
-                if ( prices[i][j] > 0.77 ) {
-                    support += ((prices[i][j] - 0.77) * 0.1) * usage[i][j];
-                }
-            }
+            support += DailyPower.computePowerSupport(usage[i], prices[i]);
         }
         return support;
     }
@@ -120,10 +94,8 @@ public class MonthlyPower {
 
         double price = 0;
         // TODO
-        for ( double[] i : usage ) {
-            for ( double j : i ) {
-                price += j * 0.45;
-            }
+        for ( int i = 0; i < usage.length; i++ ) {
+            price += DailyPower.computeNorgesPrice(usage[i]);
         }
         return price;
     }
